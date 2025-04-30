@@ -4,10 +4,12 @@ const express = require('express');
 const studentdata = require('./schema/StudentSchema');
 const app = express();
 const port = 3500;
+const cors = require('cors');
 require('./database/mongoose');
 
 //middleware
 app.use(express.json());
+app.use(cors());
 
 //REST API / RESTFUL API
 
@@ -32,7 +34,7 @@ app.post('/addstudent', async (req, res) => {
 
 app.get('/studentdata', async (req, res) => {
     try {
-        const response = await studentdata.find({ course: { $eq: "bca" } });
+        const response = await studentdata.find();
         res.status(200).send(response);
     } catch (err) {
         console.log(err);
