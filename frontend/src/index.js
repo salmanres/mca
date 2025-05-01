@@ -10,6 +10,8 @@ import HomePage from './dashboard/HomePage';
 import ContactUsPage from './dashboard/ContactUsPage';
 import StudentPage from './dashboard/StudentPage';
 import AddDataPage from './dashboard/AddDataPage';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

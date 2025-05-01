@@ -50,6 +50,17 @@ app.put('/update', async (req, res) => {
     }
 });
 
+app.delete('/deletedata/:rollno', async (req, res) => {
+    try {
+        const { rollno } = req.params;
+        console.log(req.params);
+        await studentdata.deleteOne({ rollno: rollno });
+        res.status(200).json({ message: "student data deleted" });
+    } catch (err) {
+        console.log(err);
+    }
+});
+
 app.listen(port, () => {
     console.log(`server is listening on port no ${port}`);
 });
